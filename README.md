@@ -1,2 +1,2 @@
 # ASCII
-Converts images to adjustable ASCII art
+Converts uploaded image to adjustable ASCII art using only Vanilla JS and HTML Canvas
