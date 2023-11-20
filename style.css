@@ -30,3 +30,10 @@ body {
   color: white;
   font-size: 15px;
 }
+h3 {
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%);
+}

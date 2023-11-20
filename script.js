@@ -3,9 +3,7 @@ const ctx = canvas.getContext("2d");
 const newImage = document.getElementById("myFile");
 const image1 = new Image();
 newImage.addEventListener("change", pixelize);
-
-// Can also use a base64 string instead of actual image file to avoid CORS errors.
-// image1.src = "./assets/kim.png";
+const heading = document.getElementById("heading");
 
 const inputSlider = document.getElementById("resolution");
 const inputLabel = document.getElementById("resolutionLabel");
@@ -39,7 +37,7 @@ class AsciiEffect {
     this.#height = height;
     this.#ctx.drawImage(image1, 0, 0, this.#width, this.#height);
     this.#pixels = this.#ctx.getImageData(0, 0, this.#width, this.#height);
-    console.log(this.#pixels);
+    // console.log(this.#pixels);
   }
   //convert avg color value "g" to symbol
   #convertToSymbol(g) {
@@ -80,7 +78,7 @@ class AsciiEffect {
         }
       }
     }
-    console.log(this.#imageCellArray);
+    // console.log(this.#imageCellArray);
   }
   #drawAscii() {
     this.#ctx.clearRect(0, 0, this.#width, this.#height);
@@ -107,6 +105,7 @@ function handleSlider() {
 }
 
 image1.onload = function initialize() {
+  heading.style.display = "none";
   canvas.width = image1.width;
   canvas.height = image1.height;
   effect = new AsciiEffect(ctx, image1.width, image1.height);
